@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Test {
 	
-	
+	private String id;
 	private String message;
 	private Date updateTime;
 	
@@ -23,5 +23,14 @@ public class Test {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	
    
 }
