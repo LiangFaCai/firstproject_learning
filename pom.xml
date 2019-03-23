@@ -19,6 +19,22 @@
     
     
     <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.7</version>
+</dependency>
+	    <dependency>
+	      <groupId>org.apache.poi</groupId>
+	      <artifactId>poi-ooxml</artifactId>
+	      <version>3.14</version>
+	 </dependency>
+        <dependency>
+	        <groupId>cn.jpush.api</groupId>
+	        <artifactId>jpush-client</artifactId>
+	        <version>3.2.3</version>
+	    </dependency>
     	<!-- 上传下载 -->
 		<dependency>
 	      <groupId>commons-io</groupId>

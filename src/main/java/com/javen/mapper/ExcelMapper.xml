@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javen.mapper.ExcelMapper" >
+  <resultMap id="BaseResultMap" type="com.javen.model.User" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="Name" property="name" jdbcType="VARCHAR" />
+    <result column="SEX" property="sex" jdbcType="VARCHAR" />
+    <result column="AGE" property="age" jdbcType="INTEGER" />
+    <result column="DEPTNAME" property="deptname" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <!-- 获取用户的集合列表 -->
+  <select id="selectUserList" resultMap="BaseResultMap">
+       select * from user
+  </select>
+  
+  <!-- 批量添加数据,参数是集合 -->
+  <insert id="addUser" parameterType="list">
+    insert into user (Name,SEX,AGE,DEPTNAME)
+    values
+    <foreach collection="list" item="item" index="index" separator=",">
+        (#{item.name,jdbcType=VARCHAR}, 
+         #{item.sex,jdbcType=VARCHAR},
+         #{item.age,jdbcType=INTEGER},
+         #{item.deptname,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+ 
+</mapper>
